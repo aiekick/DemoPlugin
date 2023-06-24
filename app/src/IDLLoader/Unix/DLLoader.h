@@ -53,7 +53,7 @@ namespace dlloader
 
 			if (!allocFunc || !deleteFunc) {
 				DLCloseLib();
-                printf("Can't find allocator or deleter symbol in %s : %s\n", _pathToLib.c_str(), dlerror());
+                //printf("Can't find allocator or deleter symbol in %s : %s\n", _pathToLib.c_str(), dlerror());
             }
 
             return std::shared_ptr<T>(allocFunc(), [deleteFunc](T *p) { deleteFunc(p); });

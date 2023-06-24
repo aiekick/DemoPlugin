@@ -8,14 +8,10 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(FINAL_BIN_DIR ${CMAKE_BINARY_DIR}/../bin)
 
+option(BUILD_SHARED_LIBS "build shared lib" OFF)
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "cmakeTargets")
-
-if (WIN32)
-    add_definitions(-DWIN32)
-else()
-    add_definitions(-DUNIX)
-endif()
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/common)
 add_subdirectory(${CMAKE_SOURCE_DIR}/plugin)

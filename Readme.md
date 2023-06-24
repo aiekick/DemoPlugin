@@ -7,7 +7,15 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
-## What is it for :
+you can set the CMAKE var BUILD_SHARED_LIBS as ON 
+if you want to have the common lib built in SHARED instead of STATIC
+
+## Design
+
+The app and the plugin are depending both of a static lib 
+who contain The singleton and the plugina abstract
+
+## Common as Static Library :
 
 If there is a singleton used by the app and the plugin (or any static variable), 
 when the plugin is loaded, the singleton accessed from the plugin is initialized.
@@ -53,6 +61,10 @@ and will print :
 Singleton::print() : my name is App
 ```
 
-## Conclusion :
+We must pay attention to any static vars used everywhere when we have plugins in our app 
+depending of a static common lib who embed the statics.
 
-We must pay attention to any static vars used everywhere when we have plugins in our app.
+## Common as Shared Library :
+
+when the app and pluign are depending of a lib build as sahred, there is no more static issue
+all static's are shared (so no double instancing issues)

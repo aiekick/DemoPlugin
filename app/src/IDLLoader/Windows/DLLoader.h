@@ -52,7 +52,7 @@ namespace dlloader
 
 			if (!allocFunc || !deleteFunc) {
 				DLCloseLib();
-				printf("Can't find allocator or deleter symbol in %s\n", _pathToLib.c_str());
+				//printf("Can't find allocator or deleter symbol in %s\n", _pathToLib.c_str());
 				return nullptr;
 			}
 

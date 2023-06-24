@@ -26,7 +26,4 @@ target_include_directories(${PROJECT} PRIVATE
 	${CMAKE_SOURCE_DIR}/common/src
 )
 
-target_link_libraries(${PROJECT} PRIVATE
-	Common
-)
-
+target_link_libraries(${PROJECT} Common)

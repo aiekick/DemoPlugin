@@ -74,7 +74,7 @@ void PluginManager::LoadPlugins() {
                     const auto& file_name = path.filename().string();
                     if (!resPtr->Init(file_name, file_path_name)) {
                         resPtr.reset();
-                        printf("Plugin %s fail to load\n", file_name.c_str());
+                        //printf("Plugin %s fail to load\n", file_name.c_str());
                     } else {
                         auto pluginInstancePtr = resPtr->Get().lock();
                         if (pluginInstancePtr) {

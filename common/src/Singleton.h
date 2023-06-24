@@ -1,9 +1,10 @@
 #pragma once
 
+#include <Export.h>
+
 #include <string>
 
-class Singleton {
-
+class COMMON_API Singleton {
 private:
     std::string m_Name = "Default";
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Export.h>
+
 #include <memory> // weak_ptr, shared_ptr
 #include <string>
 
@@ -8,8 +10,7 @@ typedef std::weak_ptr<APlugin> APluginWeak;
 typedef std::shared_ptr<APlugin> APluginPtr;
 
 class Singleton;
-class APlugin
-{
+class COMMON_API APlugin {
 public:
 	APlugin() = default;
 	virtual ~APlugin();
