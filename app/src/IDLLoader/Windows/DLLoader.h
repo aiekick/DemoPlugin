@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef WIN32
+#if defined(__WIN32__) || defined(WIN32) || defined(_WIN32) || defined(__WIN64__) || defined(WIN64) || defined(_WIN64) || defined(_MSC_VER)
 #include <iostream>
 #include <IDLLoader/IDLLoader.h>
 #include "Windows.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef UNIX
+#if defined(__linux__) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__EMSCRIPTEN__) || defined(__APPLE__)
 #include <iostream>
 #include <dlfcn.h>
 #include <IDLLoader/IDLLoader.h>
