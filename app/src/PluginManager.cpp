@@ -63,8 +63,6 @@ void PluginManager::Clear() {
 }
 
 void PluginManager::LoadPlugins() {
-    printf("-----------\n");
-    printf("Availables Plugins :\n");
     if (std::filesystem::exists(m_AppPath)) {
         const auto dir_iter = std::filesystem::directory_iterator(m_AppPath);
         for (const auto& file : dir_iter) {
@@ -114,7 +112,6 @@ void PluginManager::LoadPlugins() {
             }
         }
     }
-    printf("-----------\n");
 }
 
 //////////////////////////////////////////////////////////////

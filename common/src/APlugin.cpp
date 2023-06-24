@@ -10,10 +10,13 @@ APlugin::~APlugin()
 
 bool APlugin::Init(Singleton* vGuiHelperPtr)
 {
-	// the static instance of the singleton was reinit during the plugin loading
+    printf("=================\n");
+    printf("From the plugin \"%s\"\n", getName().c_str());
+
+    printf("The static instance of the singleton was reinit during the plugin loading\n\t");
 	Singleton::Instance()->print();
 
-	// so we transfer the singleton instance from the app to the plugin
+	printf("So we transfer the singleton instance from the app to the plugin\n\t");
 	Singleton::Instance(vGuiHelperPtr);
 	Singleton::Instance()->print();
 
