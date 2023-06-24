@@ -2,4 +2,9 @@
 *.pdb
 *.exe
 *.dll
+*.so
+*.dylib
 *.obj
+/cmake-build-debug/
+/.idea/
+/bin/

@@ -1,6 +1,7 @@
 #include "PluginManager.h"
 #include <Singleton.h>
 #include <filesystem>
+#include <string.h> // memset
 
 namespace fs = std::filesystem;
 

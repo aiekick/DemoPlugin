@@ -52,14 +52,11 @@ namespace dlloader
 
 			if (!allocFunc || !deleteFunc) {
 				DLCloseLib();
-				//LogVarDebug("Can't find allocator or deleter symbol in %s", _pathToLib.c_str());
+				printf("Can't find allocator or deleter symbol in %s\n", _pathToLib.c_str());
 				return nullptr;
 			}
 
-			return std::shared_ptr<T>(allocFunc(), [deleteFunc](T* p) 
-			{
-				deleteFunc(p);
-			});
+            return std::shared_ptr<T>(allocFunc(), [deleteFunc](T *p) { deleteFunc(p); });
 		}
 
 		void DLCloseLib() override
@@ -68,7 +65,6 @@ namespace dlloader
                 printf("Can't close %s\n", _pathToLib.c_str());
 			}
 		}
-
 	};
 
 }
